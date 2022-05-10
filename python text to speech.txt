@@ -1,0 +1,28 @@
+import pyttsx3
+
+#
+class Vehicles:
+
+    def __init__(self,cmp):
+        print("Motorcycle object has been created in RAM")
+        self.owner='Shery'
+        self.company=cmp
+
+    def drive(self):
+        pass
+    def horn(self):
+        v1 = pyttsx3.init()
+        voices = v1.getProperty('voices')
+        v1.setProperty('voice', voices[1].id)
+        v1.say("Thank you for dialing Data Engineer desk. For chat press:1 For Dialing press:2, and For Disconnectino press:3")
+        v1.runAndWait()
+
+    def start(self):
+        print("Vehicle Started")
+    def stop(self):
+        print("Vehicle Stopped")
+###
+mcycle = Vehicles('Honda')
+mcycle.start()
+mcycle.horn()
+mcycle.stop()
